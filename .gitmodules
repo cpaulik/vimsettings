@@ -22,3 +22,6 @@
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = http://github.com/MarcWeber/vim-addon-mw-utils
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = http://github.com/bling/vim-airline
