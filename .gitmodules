@@ -40,3 +40,6 @@
 [submodule "bundle/vim-virtualenv"]
 	path = bundle/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv
+[submodule "/home/pydev/.vim/bundle/tlib_vim"]
+	path = /home/pydev/.vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim
