@@ -16,3 +16,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = http://github.com/scrooloose/syntastic
+[submodule "bundle/tlib"]
+	path = bundle/tlib
+	url = http://github.com/vim-scripts/tlib
