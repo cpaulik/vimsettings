@@ -72,6 +72,10 @@ nmap G Gzz
 nmap n nzz
 nmap m mzz
 
+"format a paragraph with visual gqq
+nnoremap <Leader>p {v}gqq
+
+
 " Faster closing of buffers
 map <Leader>c <esc>:bd<CR>
 
