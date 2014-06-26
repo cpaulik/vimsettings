@@ -22,15 +22,23 @@ let b:folded = 1
 " map <Leader> r to python run in vim buffer
 map <buffer> <F5> <esc>:wa<CR>:Shell python %<CR>
 map <buffer> <F6> <esc>:wa<CR>:silent !tmux break-pane -t right -d<CR>:silent !tmux split-window -h -t right -l 80<CR>:silent !tmux send-keys -t right "source setup_env" C-m<CR>:silent !tmux send-keys -t right "python %" C-m<CR>
+" Settings for jedi-vim and supertab
 let g:jedi#goto_definitions_command='gd' 
 let g:jedi#documentation_command='<Leader>d'
-" Settings for jedi-vim and supertab
-let g:jedi#usages_command = "<leader>z"
+let g:jedi#usages_command='<Leader>u'
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#completions_command = ''
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#use_splits_not_buffers = 'right'
+
+"set shortcut for enable/disable showing of call signature
+"default is on
+let g:jedi#show_call_signatures = '1'
+imap <Leader>ss <esc>:let g:jedi#show_call_signatures = '1'<CR>a
+imap <Leader>s <esc>:let g:jedi#show_call_signatures = '0'<CR>a
+
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-l
 
 function! ToggleFold()
     if( b:folded == 0 )
