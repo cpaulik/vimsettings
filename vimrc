@@ -8,6 +8,9 @@ call pathogen#helptags()
 filetype plugin indent on
 syntax on
 
+" enable hiding of buffers
+set hidden
+
 " remove waiting time after leaving insert mode
 set ttimeoutlen=50
 " Showing line numbers and length
@@ -36,6 +39,8 @@ nnoremap j gj
 nnoremap k gk
 nnoremap 0 g0
 nnoremap ß g$
+
+nnoremap <CR><CR> i<CR><esc>
 
 "remap end of line
 map ß $
@@ -88,8 +93,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 "set rtp+=~/vimide/powerline/powerline/bindings/vim
 " easier moving between tabs
-nmap <Leader>n <esc>:bn!<CR>
-nmap <Leader>m <esc>:bp!<CR>
+nmap <Leader>n <esc>:bn<CR>
+nmap <Leader>m <esc>:bp<CR>
 
 " easier moving of code blocks
 " " Try to go into visual mode (v), thenselect several lines of code here and
