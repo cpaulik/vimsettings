@@ -22,6 +22,10 @@ let b:folded = 1
 " map <Leader> r to python run in vim buffer
 map <buffer> <F5> <esc>:wa<CR>:Shell python %<CR>
 map <buffer> <F6> <esc>:wa<CR>:silent !tmux break-pane -t right -d<CR>:silent !tmux split-window -h -t right -l 80<CR>:silent !tmux send-keys -t right "source setup_env" C-m<CR>:silent !tmux send-keys -t right "python %" C-m<CR>
+
+" map button to open an ipython console for trying things out
+map <buffer> <F4> <esc>:wa<CR>:silent !tmux split-window -v -t bottom -l 20<CR>:silent !tmux send-keys -t bottom "source setup_env" C-m<CR>:silent !tmux send-keys -t bottom "ipython" C-m<CR>
+
 " Settings for jedi-vim and supertab
 let g:jedi#goto_definitions_command='gd' 
 let g:jedi#documentation_command='<Leader>d'
