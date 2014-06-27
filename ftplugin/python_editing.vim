@@ -9,7 +9,7 @@ highlight ColorColumn ctermbg=233
 call matchadd('ColorColumn', '\%80v', 100)
 
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
-map <buffer> gd /def <C-R><C-W><CR> 
+map <buffer> cf ?def <CR>
 
 set foldmethod=expr
 set foldexpr=PythonFoldExpr(v:lnum)
