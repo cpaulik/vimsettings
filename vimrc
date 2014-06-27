@@ -214,5 +214,9 @@ nnoremap <Leader>qs <esc>:NERDTreeClose<CR>:call SaveSess()<CR>:wqa<CR>
 nnoremap <Leader>qq <esc>:wqa<CR>
 nnoremap <Leader>ss <esc>:call RestoreSess()<CR>:NERDTree<CR>
 
+" Template management
+let g:templates_name_prefix = ".vim-template."
+
+
 iabbr pem cpaulik@gmail.com
 iabbr wem christoph.paulik@geo.tuwien.ac.at
