@@ -40,10 +40,10 @@ let g:jedi#completions_enabled = 0
 "set shortcut for enable/disable showing of call signature
 "default is on
 let g:jedi#show_call_signatures = '1'
-imap <Leader>ss <esc>:let g:jedi#show_call_signatures = '1'<CR>a
-imap <Leader>s <esc>:let g:jedi#show_call_signatures = '0'<CR>a
+imap <buffer> <Leader>ss <esc>:let g:jedi#show_call_signatures = '1'<CR>a
+imap <buffer> <Leader>s <esc>:let g:jedi#show_call_signatures = '0'<CR>a
 
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+map <buffer> <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 function! ToggleFold()
     if( b:folded == 0 )
