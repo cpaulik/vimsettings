@@ -217,6 +217,8 @@ nnoremap <Leader>ss <esc>:call RestoreSess()<CR>:NERDTree<CR>
 " Template management
 let g:templates_name_prefix = ".vim-template."
 
+"UltraSnips configuration
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 iabbr pem cpaulik@gmail.com
 iabbr wem christoph.paulik@geo.tuwien.ac.at
