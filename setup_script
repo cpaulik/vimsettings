@@ -5,3 +5,4 @@ ln -s ~/.vim/tmux.conf ~/.tmux.conf
 cd ~/.vim
 git submodule init
 git submodule update
+echo "Please uninstall YouCompleteMe according to the instructions on the plugin website"
