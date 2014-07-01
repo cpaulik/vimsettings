@@ -29,6 +29,13 @@ set noswapfile
 set history=700
 set undolevels=700
 
+" better searching
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+nmap 7 :nohlsearch<CR>
+
 "mapping for inserting brackets and typing inside them
 inoremap [[ []<esc>i
 inoremap (( ()<esc>i
@@ -55,8 +62,8 @@ nmap <Leader>O O<esc>j
 
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
-noremap <c-l> <c-w>l
-noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l:vertical res 110<CR>
+noremap <c-h> <c-w>h:vertical res 110<CR>
 
 " Faster saving
 map <Leader>w <esc>:w<CR>
@@ -75,6 +82,8 @@ nmap m mzz
 "format a paragraph with visual gqq
 nnoremap <Leader>p {v}gq
 
+"map ctrlp for buffers
+nmap <Leader>b :CtrlPBuffer<CR>
 
 " Faster closing of buffers
 map <Leader>c <esc>:bd<CR>
@@ -82,8 +91,8 @@ map <Leader>c <esc>:bd<CR>
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-" Automatic removal of whitespace in python files
-autocmd FileType python autocmd BufWritePre <buffer> :%s/\s\+$//e
+" Automatic removal of trailing whitespace in files
+autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Mouse and backspace
 
