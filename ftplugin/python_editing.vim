@@ -6,7 +6,7 @@ map <buffer> <F6> <esc>:wa<CR>:silent !tmux break-pane -t right -d<CR>:silent !t
 map <buffer> <F4> <esc>:wa<CR>:silent !tmux split-window -v -t bottom -l 20<CR>:silent !tmux send-keys -t bottom "source setup_env" C-m<CR>:silent !tmux send-keys -t bottom "ipython" C-m<CR>
 
 " Settings for jedi-vim and supertab
-let g:jedi#goto_definitions_command='gd' 
+let g:jedi#goto_definitions_command='gd'
 let g:jedi#documentation_command='<Leader>d'
 let g:jedi#usages_command='<Leader>u'
 let g:jedi#popup_on_dot = 0
@@ -32,14 +32,14 @@ nmap <buffer> <F7> üj^h<c-v>äkA# <esc>
 nmap <buffer> <F8> üj^<c-v>äkf#ld
 
 "add a import
-map <buffer> <Leader>ai <esc>?import<CR>oimport 
+map <buffer> <Leader>ai <esc>?import<CR>oimport
 
+set nowrap
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
 finish
 endif
 let b:did_ftplugin = 1
-set nowrap
 "set colorcolumn=80
 highlight ColorColumn ctermbg=233
 call matchadd('ColorColumn', '\%80v', 100)
@@ -77,7 +77,7 @@ function! PythonFoldText()
     if size < 1000
         let size = " " . size
     endif
-    
+
     if match(getline(v:foldstart), '"""') >= 0
         let text = substitute(getline(v:foldstart), '"""', '', 'g' ) . ' '
     elseif match(getline(v:foldstart), "'''") >= 0
@@ -85,7 +85,7 @@ function! PythonFoldText()
     else
         let text = getline(v:foldstart)
     endif
-    
+
     return size . ' lines:'. text . ' '
 
 endfunction
@@ -95,15 +95,15 @@ function! PythonFoldExpr(lnum)
     if indent( nextnonblank(a:lnum) ) == 0
         return 0
     endif
-    
+
     if getline(a:lnum-1) =~ '^\(class\|def\)\s'
         return 1
     endif
-        
+
     if getline(a:lnum) =~ '^\s*$'
         return "="
     endif
-    
+
     if indent(a:lnum) == 0
         return 0
     endif
@@ -120,6 +120,6 @@ function! ReFold()
     set foldmethod=expr
     set foldexpr=PythonFoldExpr(v:lnum)
     set foldtext=PythonFoldText()
-    echo 
+    echo
 endfunction
 

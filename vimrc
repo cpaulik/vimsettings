@@ -34,7 +34,7 @@ set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-nmap 7 :nohlsearch<CR>
+nmap <Leader>7 :nohlsearch<CR>
 
 "mapping for inserting brackets and typing inside them
 inoremap [[ []<esc>i
@@ -62,8 +62,8 @@ nmap <Leader>O O<esc>j
 
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
-noremap <c-l> <c-w>l:vertical res 110<CR>
-noremap <c-h> <c-w>h:vertical res 110<CR>
+noremap <c-l> <c-w>l:vertical res 110<CR>:AirlineToggle<CR>:AirlineToggle<CR>
+noremap <c-h> <c-w>h:vertical res 110<CR>:AirlineToggle<CR>:AirlineToggle<CR>
 
 " Faster saving
 map <Leader>w <esc>:w<CR>
@@ -89,13 +89,12 @@ nmap <Leader>b :CtrlPBuffer<CR>
 map <Leader>c <esc>:bd<CR>
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost * source ~/.vimrc
 
 " Automatic removal of trailing whitespace in files
 autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Mouse and backspace
-
 set mouse=a
 set bs=2
 
@@ -103,6 +102,8 @@ set bs=2
 let g:airline_powerline_fonts=1
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 1
+
 
 "set rtp+=~/vimide/powerline/powerline/bindings/vim
 " easier moving between tabs
@@ -124,6 +125,9 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
+set nowrap
+set autoindent
+set copyindent
 
 set laststatus=2
 
@@ -228,6 +232,10 @@ let g:templates_name_prefix = ".vim-template."
 
 "UltraSnips configuration
 let g:UltiSnipsExpandTrigger="<c-j>"
+
+"only show linenumbers on current buffer
+autocmd WinEnter * :setlocal number
+autocmd WinLeave * :setlocal nonumber
 
 iabbr pem cpaulik@gmail.com
 iabbr wem christoph.paulik@geo.tuwien.ac.at

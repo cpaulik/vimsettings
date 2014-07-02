@@ -1,4 +1,4 @@
-set wrap linebreak
+set nowrap linebreak
 let &showbreak="\u21aa"
 inoremap <buffer> <Leader>* *
 inoremap <buffer> * \cdot
