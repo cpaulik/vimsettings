@@ -231,3 +231,8 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 
 iabbr pem cpaulik@gmail.com
 iabbr wem christoph.paulik@geo.tuwien.ac.at
+
+"Gvim font
+if has('gui_running')
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+endif
