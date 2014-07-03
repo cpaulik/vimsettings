@@ -34,6 +34,9 @@ nmap <buffer> <F8> üj^<c-v>äkf#ld
 "add a import
 map <buffer> <Leader>ai <esc>?import<CR>oimport 
 
+" fixing typos
+iabbr <buffer> Treu True
+
 " Only do this when not done yet for this buffer
 if exists("b:did_ftplugin")
 finish
