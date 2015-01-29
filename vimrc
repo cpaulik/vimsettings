@@ -86,7 +86,7 @@ nnoremap <Leader>p {v}gq
 nmap <Leader>b :CtrlPBuffer<CR>
 
 " Faster closing of buffers
-map <Leader>c <esc>:bd<CR>
+nnoremap <Leader>c <esc>:bn<CR>:bd#<CR>
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost * source ~/.vimrc
@@ -106,9 +106,12 @@ let g:airline#extensions#virtualenv#enabled = 1
 
 
 "set rtp+=~/vimide/powerline/powerline/bindings/vim
-" easier moving between tabs
+" easier moving between buffers 
 nmap <Leader>n <esc>:bn<CR>
 nmap <Leader>m <esc>:bp<CR>
+
+:au WinEnter * :set winfixheight
+:au WinEnter * :wincmd =
 
 " easier moving of code blocks
 " " Try to go into visual mode (v), thenselect several lines of code here and
